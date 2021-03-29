@@ -24,10 +24,14 @@ public class Presentation {
         Scanner scanner = new Scanner(System.in);
         String answer = scanner.nextLine();
         if (!answer.isEmpty()) {
-            scanner.close();
-            return answer;
+            try {
+                return answer;
+            } catch (NoAnswerProvidedException answerIsEmpty) {
+                System.out.println(answerIsEmpty.getMessage());
+            } finally {
+                scanner.close();
+            }
         }
-        scanner.close();
         return getAnswerFromUser();
     }
 
