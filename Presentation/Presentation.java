@@ -23,14 +23,9 @@ public class Presentation {
     public String getAnswerFromUser() {
         Scanner scanner = new Scanner(System.in);
         String answer = scanner.nextLine();
+        scanner.close();
         if (!answer.isEmpty()) {
-            try {
-                return answer;
-            } catch (NoAnswerProvidedException answerIsEmpty) {
-                System.out.println(answerIsEmpty.getMessage());
-            } finally {
-                scanner.close();
-            }
+            return answer;
         }
         return getAnswerFromUser();
     }
@@ -88,7 +83,12 @@ public class Presentation {
         answer = getAnswerFromUser();
         if (!answer.isEmpty()) {
             this.player = this.quiz.getPlayerByName(answer);
-            System.out.println("The current connected player is: " + this.player.getName() + ".\n Welcome again!");
+            if (!this.player.getName().equals("")) {
+                System.out.println("The current connected player is: " + this.player.getName() + ".\n Welcome again!");
+            } else {
+                System.out.println("Player unrecognized! Please retry to insert you name.\n");
+                choosePlayerCommand();
+            }
         }
     }
 
