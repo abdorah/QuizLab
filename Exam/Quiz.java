@@ -50,15 +50,19 @@ public class Quiz extends Repository {
 
     @Override
     public void updateScore(String question, String answer) {
+        int score = 0;
         if (answerIsCorrect(question, answer)) {
-            player.setHighScore(player.getHighScore() + 1);
+            score++;
             int i;
             for (i = 0; i < players.size(); i++) {
                 if (players.get(i).getName().equals(player.getName())) {
                     break;
                 }
             }
-            players.set(i, player);
+            if (score > player.getHighScore()) {
+                player.setHighScore(score);
+                players.set(i, player);
+            }
         }
     }
 
