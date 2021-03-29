@@ -6,7 +6,6 @@ import Player.Player;
 
 public class Quiz extends Repository {
 
-    static int score;
     static Player player;
 
     public Quiz() {
@@ -50,9 +49,16 @@ public class Quiz extends Repository {
     }
 
     @Override
-    public void updateScore(String questionNumber, String answerNumber) {
-        if (answerIsCorrect(questionNumber, answerNumber)) {
-            score++;
+    public void updateScore(String question, String answer) {
+        if (answerIsCorrect(question, answer)) {
+            player.setHighScore(player.getHighScore() + 1);
+            int i;
+            for (i = 0; i < players.size(); i++) {
+                if (players.get(i).getName().equals(player.getName())) {
+                    break;
+                }
+            }
+            players.set(i, player);
         }
     }
 
@@ -89,12 +95,16 @@ public class Quiz extends Repository {
 
     @Override
     public void updatePlayer(String name) {
+        boolean playerUpdated = false;
         for (int i = 0; i < players.size(); i++) {
-            if (players.get(i).getName().equals(name)) {
+            if (players.get(i).getName().equals(player.getName())) {
                 players.get(i).setName(name);
-            } else {
-                System.out.println("User not found! Please provid an other name.");
+                playerUpdated = true;
+                break;
             }
+        }
+        if (!playerUpdated) {
+            System.out.println("User not found! Please provid an other name.");   
         }
     }
 }

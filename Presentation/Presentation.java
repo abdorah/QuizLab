@@ -23,7 +23,7 @@ public class Presentation {
     public String getAnswerFromUser() {
         Scanner scanner = new Scanner(System.in);
         String answer = scanner.nextLine();
-        scanner.close();
+        // scanner.close();
         if (!answer.isEmpty()) {
             return answer;
         }
@@ -55,12 +55,20 @@ public class Presentation {
     }
 
     void startCommand() {
-        List<String> quiz = this.quiz.takeQuiz();
-        for (int i = 0; i < quiz.size(); i++) {
-            System.out.println("question" + i + ": " + quiz.get(i));
-            System.out.println(this.quiz.answerIsCorrect(quiz.get(i), this.getAnswerFromUser()) ? "correct answer"
-                    : "wrong answer");
+        List<String> exam = this.quiz.takeQuiz();
+        String answer;
+        for (int i = 0; i < exam.size(); i++) {
+            System.out.println("question" + i + ": " + exam.get(i));
+            answer = this.getAnswerFromUser();
+            if (answer.equals(">quit")) {
+                quitCommand();
+                break;
+            } else {
+                System.out.println(this.quiz.answerIsCorrect(exam.get(i), answer) ? "correct answer" : "wrong answer");
+                quiz.updateScore(exam.get(i), answer);
+            }
         }
+
     }
 
     void addPlayerCommand() {
@@ -111,6 +119,9 @@ public class Presentation {
     public boolean initiateTheGame() {
         String answer = getAnswerFromUser();
         switch (answer) {
+        case ">help":
+            helpCommand();
+            break;
         case ">choose a player":
             choosePlayerCommand();
             this.signInPerformed = true;
