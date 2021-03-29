@@ -23,7 +23,6 @@ public class Presentation {
     public String getAnswerFromUser() {
         Scanner scanner = new Scanner(System.in);
         String answer = scanner.nextLine();
-        // scanner.close();
         if (!answer.isEmpty()) {
             return answer;
         }
