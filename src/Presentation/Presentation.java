@@ -56,7 +56,7 @@ public class Presentation {
         List<String> exam = this.quiz.takeQuiz();
         String answer;
         for (int i = 0; i < exam.size(); i++) {
-            System.out.println("question" + i + ": " + exam.get(i));
+            System.out.println("question " + i + ": " + exam.get(i));
             answer = this.getAnswerFromUser();
             if (answer.equals(">quit")) {
                 quitCommand();

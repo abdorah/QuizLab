@@ -50,19 +50,15 @@ public class Quiz extends Repository {
 
     @Override
     public void updateScore(String question, String answer) {
-        int score = 0;
         if (answerIsCorrect(question, answer)) {
-            score++;
             int i;
             for (i = 0; i < players.size(); i++) {
                 if (players.get(i).getName().equals(player.getName())) {
                     break;
                 }
             }
-            if (score > player.getHighScore()) {
-                player.setHighScore(score);
-                players.set(i, player);
-            }
+            player.setHighScore(player.getHighScore() + 1);
+            players.set(i, player);
         }
     }
 
@@ -108,7 +104,7 @@ public class Quiz extends Repository {
             }
         }
         if (!playerUpdated) {
-            System.out.println("User not found! Please provid an other name.");   
+            System.out.println("User not found! Please provid an other name.");
         }
     }
 }
