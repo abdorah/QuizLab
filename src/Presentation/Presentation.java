@@ -41,8 +41,7 @@ public class Presentation {
                     + "then you add a command from this list below:\n" + "quit: to quit the quiz\n"
                     + "start: to start a quiz\n" + "help: to see this help panel\n"
                     + "score: to see the high score of the current player\n" + "exit: to exit the game\n"
-                    + "choose a player: to choose a player by giving his or her name\n"
-                    + "add player: to add a new player\n" + "edit player: to edit the player's informations");
+                    + "edit player: to edit the player's informations");
         } else {
             System.out.println("Hello and welcome into QuizLab! This is the help panel.\n"
                     + "To use this application you have to sign in or sign up first.\n"
