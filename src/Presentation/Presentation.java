@@ -128,6 +128,9 @@ public class Presentation {
             addPlayerCommand();
             this.signInPerformed = true;
             break;
+        case ">exit":
+            exitCommand();
+            break;
         default:
             this.signInPerformed = false;
             System.out.println("the provided command is unkown .\n"
