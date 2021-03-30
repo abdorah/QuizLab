@@ -110,7 +110,7 @@ public class Presentation {
     }
 
     void exitCommand() {
-        System.out.println("Good by for the moment.\n"
+        System.out.println("Good bye for the moment.\n"
                 + "Remember that the greatest players don't stop till they acheive their goals!\n");
         gameIsOn = false;
     }
