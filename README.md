@@ -17,3 +17,7 @@ Firstly, the user sign in or sign up. Then, the user can perform a set of action
 | >choose a player | to sign in as an other user |
 | >add player | to create new account |
 | >score | to see the current player's high score |
+
+---
+
+⚓ Please refer to the github repo [QuizLab](https://github.com/abdorah/QuizLabJavaFx) for the desktop version.
