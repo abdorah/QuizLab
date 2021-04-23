@@ -16,6 +16,7 @@ import Player.Player;
 public class Quiz extends Repository {
 
     static Player player;
+    static int currentScore;
 
     public Quiz() {
         questionsRepository();
@@ -44,6 +45,7 @@ public class Quiz extends Repository {
 
     @Override
     public List<String> takeQuiz() {
+        currentScore = 0;
         return questions;
     }
 
@@ -66,8 +68,11 @@ public class Quiz extends Repository {
                     break;
                 }
             }
-            player.setHighScore(player.getHighScore() + 1);
-            players.set(i, player);
+            currentScore++;
+            if (currentScore >= player.getHighScore()) {
+                player.setHighScore(currentScore);
+                players.set(i, player);
+            }
         }
     }
 
