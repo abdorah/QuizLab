@@ -1,5 +1,6 @@
 package Presentation;
 
+import java.io.Console;
 import java.util.List;
 import java.util.Scanner;
 
@@ -21,10 +22,17 @@ public class Presentation {
     }
 
     public String getAnswerFromUser() {
-        Scanner scanner = new Scanner(System.in);
-        String answer = scanner.nextLine();
-        if (!answer.isEmpty()) {
-            return answer;
+        String answer = "";
+        Console connexion = System.console();
+        if (connexion != null) {
+            try (Scanner scanner = new Scanner(connexion.reader())) {
+                if (scanner.hasNext()) {
+                    answer = scanner.nextLine();
+                }
+                return answer;
+            } catch (Exception e) {
+                System.out.println("Exception message: " + e.getMessage());
+            }
         }
         return getAnswerFromUser();
     }
