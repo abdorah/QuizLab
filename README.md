@@ -28,4 +28,4 @@ Firstly, the user sign in or sign up. Then, the user can perform a set of action
 
 ---
 
-⚓ Please refer to the github repo [QuizLab](https://github.com/abdorah/QuizLabJavaFx) for the desktop version.
+⚓ Please refer to the github repo [QuizLabJavaFx](https://github.com/abdorah/QuizLabJavaFx) for the desktop version.
