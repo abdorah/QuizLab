@@ -10,13 +10,21 @@ Firstly, the user sign in or sign up. Then, the user can perform a set of action
 
 | Command | What it does |
 | --- | --- |
-| >start | start the game |
-| >quit | quit the game |
-| >help | access the help panel |
-| >exit | exit the application |
 | >choose a player | to sign in as an other user |
 | >add player | to create new account |
+| >edit player | to edit the current user information |
+| >start | start the game |
+| >quit | quit the game |
 | >score | to see the current player's high score |
+| >help | access the help panel |
+| >exit | exit the application |
+
+## Game preview
+* Global setup:
+<img src="assets/beforeGameMode.png"/>
+
+* Game ON:
+<img src="assets/GameOnMode.png"/>
 
 ---
 
