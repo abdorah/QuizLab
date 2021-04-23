@@ -7,6 +7,14 @@ import java.util.Scanner;
 import Exam.Quiz;
 import Player.Player;
 
+/**
+ * @author KOTBI Abderrahmane
+ * @version 1.0
+ * <p>
+ * This is the presentation class. It represents the client side logic.
+ * </p>
+ */
+
 public class Presentation {
 
     public Quiz quiz;
@@ -22,14 +30,14 @@ public class Presentation {
     }
 
     public String getAnswerFromUser() {
-        String answer = "";
+        String answer;
         Console connexion = System.console();
         if (connexion != null) {
             try (Scanner scanner = new Scanner(connexion.reader())) {
-                if (scanner.hasNext()) {
-                    answer = scanner.nextLine();
+                answer = scanner.nextLine();
+                if (!answer.isBlank()) {
+                    return answer;
                 }
-                return answer;
             } catch (Exception e) {
                 System.out.println("Exception message: " + e.getMessage());
             }
@@ -95,7 +103,7 @@ public class Presentation {
         System.out.println("Please insert your name:\n");
         String answer = "";
         answer = getAnswerFromUser();
-        if (!answer.isEmpty()) {
+        if (!answer.isBlank()) {
             this.player = this.quiz.getPlayerByName(answer);
             if (!this.player.getName().equals("")) {
                 System.out.println("The current connected player is: " + this.player.getName() + ".\n Welcome again!");

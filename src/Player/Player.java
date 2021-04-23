@@ -1,5 +1,13 @@
 package Player;
 
+/**
+ * @author KOTBI Abderrahmane
+ * @version 1.0
+ * <p>
+ * This is the Player class. It represents the player entity.
+ * </p>
+ */
+
 public class Player {
 
     String name;

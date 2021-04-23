@@ -5,6 +5,15 @@ import java.util.HashMap;
 import java.util.List;
 import Player.Player;
 
+/**
+ * @author KOTBI Abderrahmane
+ * @version 1.0
+ * <p>
+ * This is the Repository abstracts class. It implements the Question
+ * interface and stores the application users and quizs informations.
+ * </p>
+ */
+
 public abstract class Repository implements Question {
 
     public static List<String> questions = new ArrayList<String>();

@@ -4,6 +4,15 @@ import java.util.List;
 
 import Player.Player;
 
+/**
+ * @author KOTBI Abderrahmane
+ * @version 1.0
+ * <p>
+ * This is the Quiz class. It extends the abstracts class Repository.
+ * It consists of the logic of our application.
+ * </p>
+ */
+
 public class Quiz extends Repository {
 
     static Player player;
